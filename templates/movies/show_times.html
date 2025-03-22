@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Times</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Available Show Times</h1>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Theater</th>
+                    <th>Show Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for show in show_times %}
+                <tr>
+                    <td>{{ show.movie.name }}</td>
+                    <td>{{ show.theater.name }}</td>
+                    <td>{{ show.show_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

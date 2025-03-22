@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Select Your Seats</h1>
+        <form method="POST" action="{% url 'book_seats' theater.id %}">
+            {% csrf_token %}
+            <div class="row">
+                {% for seat in seats %}
+                <div class="col-md-2">
+                    <div class="seat {{ seat.is_booked|yesno:'booked,available' }}" data-seat-id="{{ seat.id }}">
+                        {{ seat.seat_number }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Book Selected Seats</button>
+        </form>
+    </div>
+    <style>
+        .seat {
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .available {
+            background-color: #28a745;
+        }
+        .booked {
+            background-color: #dc3545;
+            cursor: not-allowed;
+        }
+    </style>
+</body>
+</html>
