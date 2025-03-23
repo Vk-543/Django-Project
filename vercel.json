@@ -1,4 +1,4 @@
-pyth{
+{
     "builds": [{
         "src": "bookmyseat/wsgi.py",
         "use": "@vercel/python",
