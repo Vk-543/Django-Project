@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seat Selection</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        function toggleSeat(seatElement) {
+            seatElement.classList.toggle('selected');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -14,7 +19,7 @@
             <div class="row">
                 {% for seat in seats %}
                 <div class="col-md-2">
-                    <div class="seat {{ seat.is_booked|yesno:'booked,available' }}" data-seat-id="{{ seat.id }}">
+                    <div class="seat {{ seat.is_booked|yesno:'booked,available' }}" data-seat-id="{{ seat.id }}" onclick="toggleSeat(this)">
                         {{ seat.seat_number }}
                     </div>
                 </div>
@@ -38,6 +43,9 @@
         .booked {
             background-color: #dc3545;
             cursor: not-allowed;
+        }
+        .selected {
+            background-color: #ffc107; /* Highlight selected seats */
         }
     </style>
 </body>
