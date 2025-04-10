@@ -1,3 +1,1 @@
-# django-book
-
 # django-bookmyshow

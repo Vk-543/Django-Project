@@ -8,6 +8,8 @@
     <script>
         function toggleSeat(seatElement) {
             seatElement.classList.toggle('selected');
+            const checkbox = seatElement.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked; // Toggle checkbox state
         }
     </script>
 </head>
@@ -21,6 +23,7 @@
                 <div class="col-md-2">
                     <div class="seat {{ seat.is_booked|yesno:'booked,available' }}" data-seat-id="{{ seat.id }}" onclick="toggleSeat(this)">
                         {{ seat.seat_number }}
+                        <input type="checkbox" name="seat_id" value="{{ seat.id }}" style="display:none;">
                     </div>
                 </div>
                 {% endfor %}
