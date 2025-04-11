@@ -24,7 +24,7 @@ SECRET_KEY = 'your-secret-key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','django-projectupdated-1-3r4ftwzhr-vk-543s-projects.vercel.app','.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','django-project-sand-54t28xlfr-vk-543s-projects.vercel.app','django-project-sand-git-main-vk-543s-projects.vercel.app','django-project-sand-umber.vercel.app','.vercel.app']
 
 # Application definition
 
